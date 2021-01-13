@@ -1,0 +1,443 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid cars_categery_row bt_bg">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">ALL Jobs</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <h6 class="pl_10">Jobs</h6>
+    </div>
+    <div class="row pt_20">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <p class="fs_20 pb_20">Filters</p>
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="filter_right_icons_row nav" id="nav-tab" role="tablist">
+          <span class="pt_12">Sort By:</span>
+          <!-- Date Published button -->
+          <div class="btn-group published_btn">
+            <button type="button" class="btn dropdown-toggle btn_tradex_btn" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Date Published
+            </button> 
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/#">Popular</a>
+              <a class="dropdown-item" routerLink="/#">Recent</a>
+              <a class="dropdown-item" routerLink="/#">Oldest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End car categery row -->
+
+<!-- Start categery row -->
+<div class="container-fluid bb_bg">
+  <div class="container">
+    <div class="row">
+      <!-- start left nav categery -->
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="categery_vartical_nav">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#categery" data-toggle="collapse" data-target="#categery">Job Roles <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse nd_dropdown min_height_scroll_60" id="categery" aria-expanded="false">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Search Jobs type</label>
+                  <input type="text" class="form-control" placeholder="Search Jobs type..." />
+                </div>
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link" routerLink="/">IT</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/">Electrician</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/">Mechanic</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/">Auto Mobile</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/">Other</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#location" data-toggle="collapse" data-target="#location">Monthly
+                Salary <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse min_height_scroll_60" id="location" aria-expanded="false">
+                <div class="form-check">
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked> ₹
+                    5,000 and above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="radio2">
+                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">₹ 6,000 and
+                    above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="radio3">
+                    <input type="radio" class="form-check-input" id="radio3" name="optradio" value="option2">₹ 7,000 and
+                    above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2">₹ 8,000 and above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2">₹ 9,000 and above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2">₹ 10,000 and above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2">₹ 20,000 and above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2">₹ 30,000 and above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2">₹ 40,000 and above
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2">₹ 50,000 and above
+                  </label>
+                </div>
+
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#brand" data-toggle="collapse" data-target="#brand">Job Type <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="brand" aria-expanded="false">
+                <div class="form-check">
+                  <label class="form-check-label" for="Work From Home">
+                    <input type="checkbox" class="form-check-input" id="Work From Home" name="option1" value="something"
+                      checked>Work From Home
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="Part
+                  Time Jobs">
+                    <input type="checkbox" class="form-check-input" id="Part
+                    Time Jobs" name="option2" value="something">Part
+                    Time Jobs
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="Full Time Jobs">
+                    <input type="checkbox" class="form-check-input">Full Time Jobs
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="Internships">
+                    <input type="checkbox" class="form-check-input">Internships
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="Work Abroad">
+                    <input type="checkbox" class="form-check-input">Work Abroad
+                  </label>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#price" data-toggle="collapse" data-target="#price">Company <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse min_height_scroll_60" id="price" aria-expanded="false">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search Company" />
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> IMPACT
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> Measured Results
+                    Marketing
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> Flawless Inbound
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> Spinfluence
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> Search & Be Found
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> ZapLabs
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> SnapCrowd
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio" value="option2"> MusicJolt
+                  </label>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End left nav categery -->
+      <!-- start right categery body -->
+      <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <div class="job_page_section">
+          <div class="row pl_10 single_item_section">
+            <div class="col-12 col-md-12">
+              <div class="items_colum bg_white_red">
+                <div class="item_content col-12 col-md-12">
+                  <h5 class="item_title_height pl-2">HR Executive</h5>
+                  <div class="row pl-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Monthly</b></p>
+                      <p><span>&#8377; &nbsp;</span>9,000 - 10,500</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Job Type</b></p>
+                      <p>Full Time</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Company Name</b></p>
+                      <p>Royal Enterprises</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Experience</b></p>
+                      <p>0 - 3 years</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <p class="left"><b>Posted by Individual</b></p>
+                      <p class="left">30-jan-2020, 03:35 PM</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5 right pt-2">
+                      <a href="#" class="apply_btn "><b>Apply Now</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+              <div class="items_colum bg_white_red">
+                <div class="item_content col-12 col-md-12">
+                  <h5 class="item_title_height pl-2">HR Executive </h5>
+                  <div class="row pl-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Monthly</b></p>
+                      <p><span>&#8377; &nbsp;</span>9,000 - 10,500</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Job Type</b></p>
+                      <p>Full Time</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Company Name</b></p>
+                      <p>Royal Enterprises</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Experience</b></p>
+                      <p>0 - 3 years</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <p class="left"><b>Posted by Individual</b></p>
+                      <p class="left">30-jan-2020, 03:35 PM</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5 right pt-2">
+                      <a href="#" class="apply_btn "><b>Apply Now</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+              <div class="items_colum bg_white_red">
+                <div class="item_content col-12 col-md-12">
+                  <h5 class="item_title_height pl-2">HR Executive </h5>
+                  <div class="row pl-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Monthly</b></p>
+                      <p><span>&#8377; &nbsp;</span>9,000 - 10,500</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Job Type</b></p>
+                      <p>Full Time</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Company Name</b></p>
+                      <p>Royal Enterprises</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Experience</b></p>
+                      <p>0 - 3 years</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <p class="left"><b>Posted by Individual</b></p>
+                      <p class="left">30-jan-2020, 03:35 PM</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5 right pt-2">
+                      <a href="#" class="apply_btn "><b>Apply Now</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+              <div class="items_colum bg_white_red">
+                <div class="item_content col-12 col-md-12">
+                  <h5 class="item_title_height pl-2">HR Executive </h5>
+                  <div class="row pl-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Monthly</b></p>
+                      <p><span>&#8377; &nbsp;</span>9,000 - 10,500</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Job Type</b></p>
+                      <p>Full Time</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Company Name</b></p>
+                      <p>Royal Enterprises</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Experience</b></p>
+                      <p>0 - 3 years</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <p class="left"><b>Posted by Individual</b></p>
+                      <p class="left">30-jan-2020, 03:35 PM</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5 right pt-2">
+                      <a href="#" class="apply_btn "><b>Apply Now</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+              <div class="items_colum bg_white_red">
+                <div class="item_content col-12 col-md-12">
+                  <h5 class="item_title_height pl-2">HR Executive </h5>
+                  <div class="row pl-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Monthly</b></p>
+                      <p><span>&#8377; &nbsp;</span>9,000 - 10,500</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Job Type</b></p>
+                      <p>Full Time</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Company Name</b></p>
+                      <p>Royal Enterprises</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Experience</b></p>
+                      <p>0 - 3 years</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <p class="left"><b>Posted by Individual</b></p>
+                      <p class="left">30-jan-2020, 03:35 PM</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5 right pt-2">
+                      <a href="#" class="apply_btn "><b>Apply Now</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+              <div class="items_colum bg_white_red">
+                <div class="item_content col-12 col-md-12">
+                  <h5 class="item_title_height pl-2">HR Executive </h5>
+                  <div class="row pl-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Monthly</b></p>
+                      <p><span>&#8377; &nbsp;</span>9,000 - 10,500</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Job Type</b></p>
+                      <p>Full Time</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Company Name</b></p>
+                      <p>Royal Enterprises</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                      <p><b>Experience</b></p>
+                      <p>0 - 3 years</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <p class="left"><b>Posted by Individual</b></p>
+                      <p class="left">30-jan-2020, 03:35 PM</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-5 right pt-2">
+                      <a href="#" class="apply_btn "><b>Apply Now</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="view_btn center">
+            <button type="button" class="btn btn-clr">View More</button>
+          </div>
+        </div>
+      </div>
+      <!-- End right categery body -->
+    </div>
+  </div>
+</div>
+<!-- End categery row -->
+
+<app-footer></app-footer>

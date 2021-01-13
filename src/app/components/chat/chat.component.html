@@ -1,0 +1,74 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid bt_bg bb_bg">
+  <div class="container">
+    <!-- <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Chat</li>
+        </ol>
+      </nav>
+    </div> -->
+    <div class="row">
+      <h2 class="pl_10">Chat History</h2>
+    </div>
+    <div *ngIf="!chatHistory" style="text-align: center;">
+      No History
+    </div>
+    <!-- *ngIf="chatHistory" -->
+    <div class="row mt_20" style="border:1px solid gray">
+      <!-- <div class="row mt_20 chat_border_row"> -->
+      <div class="col-12 col-sm-12 col-md-5 col-lg-6" style="border-right:1px solid gray;">
+        <div class="left_chat_colum" style="margin:10px;">
+          <div class="index_items" *ngFor="let data of chatHistory" (click)="getChatResponse(data)">
+            <div class="left_chat_profile">
+              <img [src]="data.user_image"
+                style="height: 80px;width:80px;border-radius:40px;" />
+
+              <div class="left_profile_details" >
+                <h5>{{data.username}}</h5>
+                <span>Last seen {{data.datetime}} </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+        <div class="right_chat_colum">
+          <div class="chat_history_img pb_20">
+            <p  *ngIf="!chatReposnce" class="pt_20">No messages, yet?</p>
+            <i class="fa fa-trash" (click)="deleteChat()" aria-hidden="true" style="position: absolute;
+            left: 95%;
+            top: 3%;
+            color: red;
+        "></i>
+            <img *ngIf="!chatReposnce" src="../assets/images/chat-history.png" style="height: 25px;;" />
+
+            <div *ngIf="chatReposnce">
+              <p  *ngFor="let msg of chatReposnce"  class="pt_20">{{msg.message}}</p>
+
+
+            </div>
+            <div class="type_msg">
+              <form class="pt-0" style="margin-top:20%">
+                  <div class="form-group input_msg_write" style="display: flex;">
+                      <input type="text" class="form-control write_msg" placeholder="Type a message"
+                         [(ngModel)]="message" name="message" />
+                         <button class="msg_send_btn" (click)="sendMessage()" type="submit"><i class="fa fa-paper-plane-o"
+                          aria-hidden="true"></i></button>
+                  </div>
+                 
+              </form>
+          </div>
+            <!-- <p class="pt_20">We’ll keep messages for any item you’re selling in here</p> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

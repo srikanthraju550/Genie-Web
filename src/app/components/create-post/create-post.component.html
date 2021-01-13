@@ -1,0 +1,222 @@
+<div class="post_top_nav">
+  <a routerLink="/post"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+  <a routerLink="/"><img src="assets/images/geneni_logo.png" title="Genie" alt="genie" /></a>
+</div>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="title_two">
+        <h3 class="center pt-5">Post your Ad</h3>
+      </div>
+
+      <div class="col-12 col-md-8 offset-md-2 mt-3">
+        <form enctype="multipart/form-data">
+          <div class="border_one_px pb-3">
+            <h5 class="pt-4 mb-3">Cars</h5>
+            <!-- <nav class="breadcrumb">
+                <a class="breadcrumb-item" routerLink="/post">Cars</a>
+                <span class="breadcrumb-item active">Cars</span>
+              </nav> -->
+
+            <div *ngFor="let data of customFields;let i = index">
+
+              <div class="form-group pt-3" *ngIf="data.field_type=='dropdown'">
+                <label for="exampleFormControlSelect1">{{data.name}} *</label>
+                <select class="form-control" (change)="changeDropDown($event.target.value,data)"
+                  id="exampleFormControlSelect1">
+                  <option>Select {{data.name}}</option>
+                  <option *ngFor="let opt of data.field_options" [ngValue]="opt.field_option">{{opt.field_option}}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group" *ngIf="data.field_type == 'text' || data.field_type=='number'">
+                <label for="exampleInputEmail1">{{data.name}} *</label><br>
+                <input type="text" class="form-control" id="validationServerUsername" name="mobile"
+                  (keyup)="changeText(data,$event)" placeholder="No of Owners" required>
+              </div>
+
+              <!-- <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="km-driven">KM driven *</label>
+                  <input type="km-driven" class="form-control" id="km-driven" placeholder="">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="year">Year *</label>
+                  <input type="Date" class="form-control" id="year" placeholder="">
+                </div>
+              </div> -->
+
+              <div class="form-group orm-check-inline" *ngIf="data.field_type == 'radio'">
+                <label for="exampleInputEmail1">{{data.name}} *</label><br>
+                <div class="custom-control custom-control-inline" *ngFor="let opt of data.field_options;let i=index">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                    (change)="changeDropDown($event.target.value,data)" [value]="opt.field_option" id="inlineRadio1">
+                  <label for="customRadioInline1">{{opt.field_option}}</label>
+                </div>
+              </div>
+
+
+
+              <div class="form-group" *ngIf="data.field_type == 'checkbox'">
+                <div class="custom-control custom-radio custom-control-inline" *ngFor="let opt of data.field_options">
+                  <input type="checkbox" class="form-check-input" id="Work From Home" name="option1"
+                    [value]="opt.field_option" (change)="changeDropDown($event.target.value,data)">
+                  <label for="exampleInputEmail1">{{data.field_option}} *</label><br>
+
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+
+            <div class="form-group pt-3">
+              <label for="exampleInputEmail1">Mobile Phone Number *</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend3">+91</span>
+                </div>
+                <input [ngClass]="{'redBorder':showError && mobile==undefined}" type="text" class="form-control"
+                  id="validationServerUsername" name="mobile" [(ngModel)]="mobile" placeholder="Enter Your Number"
+                  required>
+              </div>
+            </div>
+            <div class="form-group pt-3">
+              <label for="exampleInputEmail1">Location *</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend3"><i class="fa fa-crosshairs"></i></span>
+                </div>
+                <input [ngClass]="{'redBorder':showError && mobile==undefined}" type="text" class="form-control"
+                  id="validationServerUsername" name="location" [(ngModel)]="location" placeholder="Enter Your Location"
+                  required>
+              </div>
+            </div>
+
+
+            <div class="form-group pt-3">
+              <label for="exampleFormControlSelect1">State *</label>
+              <select class="form-control" (change)="changeState($event.target.value)" id="exampleFormControlSelect1">
+                <option>Select State</option>
+                <option *ngFor="let state of states" [ngValue]="state.state_id">{{state.name}}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group pt-3" *ngIf="showCity">
+              <label for="exampleFormControlSelect1">City </label>
+              <select class="form-control" (change)="changeCity($event.target.value)" id="exampleFormControlSelect1">
+                <option>Select City</option>
+                <option *ngFor="let city of cities" [ngValue]="city.city_id">{{city.name}}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group pt-3" *ngIf="showArea">
+              <label for="exampleFormControlSelect1">Area </label>
+              <select class="form-control" (change)="changeArea($event.target.value)" id="exampleFormControlSelect1">
+                <option>Select Area</option>
+                <option *ngFor="let area of areas" [ngValue]="area.area_id">{{area.name}}
+                </option>
+              </select>
+            </div>
+
+            <!-- map -->
+
+
+            <!-- map -->
+
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Price *</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend3"><i class="fa fa-inr"
+                      aria-hidden="true"></i></span>
+                </div>
+                <input [ngClass]="{'redBorder':showError && mobile==undefined}" type="text" class="form-control"
+                  id="validationServerUsername" name="price" [(ngModel)]="price" placeholder="Enter Price" required>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ad title *</label>
+              <input [ngClass]="{'redBorder':showError && mobile==undefined}" type="text" class="form-control"
+                placeholder="Enter Title" name="title" [(ngModel)]="title" required>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Description *</label>
+              <textarea [ngClass]="{'redBorder':showError && mobile==undefined}" class="form-control"
+                placeholder="Enter Description" name="description" [(ngModel)]="description" required></textarea>
+              <p>Include Condition features and reason for sale</p>
+            </div>
+
+            <div >
+              <label for="exampleInputEmail1">Loctaion *</label>
+              <input id="pac-input" class="form-control" type="text" placeholder="Search Location" />
+              <div #mapContainer id="map" style="height: 240px;"></div>
+            </div>
+
+
+            <div class="border_one_px pb-3">
+              <h5 class="pt-4 mb-3">UPLOAD PHOTOS</h5>
+              <div class="form-group">
+                <div class="row">
+                  <div class="input-group col-12 col-md-12 mt-1">
+
+
+                    <input type="file" name="image" (change)="onFileSelect($event.target.files)" />
+                    <!-- <input type="file" (change)="uploadFile($event)"> -->
+                    <br />
+
+                  </div>
+                  <div>
+
+                    <img *ngFor="let img of images" [src]="img" height="200">
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="center mt-4" *ngIf="!showEditBtn">
+            <button type="submit" class="btn btn-info wd_5" (click)="createPost()">Post Your Ad</button>
+          </div>
+
+          <div class="center mt-4" *ngIf="showEditBtn">
+            <button type="submit" class="btn btn-info wd_5" (click)="editPost()">Edit Your Ad</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Start footer copy right row -->
+<div class="container-fluid footer_copy-right mt-5 pt-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 copyright_left_content">
+        <p>Copyright &#9400;2020 <a routerLink="/#">Genie.</a> All Rights Reserved.</p>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 copyright_right_content">
+        <div class="copy_right_socia_icons">
+          <p>Powered by <a href="https://www.versatilemobitech.com/" target="_block">Versatile Mobitech Pvt.
+              Ltd</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End footer copy right row -->

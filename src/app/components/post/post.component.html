@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+  <div class="post_top_nav">
+    <a routerLink="/"><img src="assets/images/geneni_logo.png" title="Genie" alt="genie" /></a>
+  </div>
+  </div>
+  </div>
+  
+  <div class="container-fluid bb_bg">
+    <div class="container">
+      <div id="accordion">
+        <h5 style="text-align: center;">POST YOUR AD</h5>
+        <div class="card" *ngFor="let cat of categoryList">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <img [src]="image_path+ cat.logo" style="height: 20px;width:20px;" />
+              <!-- <i class="fa fa-car" aria-hidden="true"></i> -->
+              <button class="btn btn-link collapsed" (click)="getSubCat(cat.category_id)" data-toggle="collapse" data-target="#cars" aria-expanded="false" aria-controls="collapseTwo">
+                <b>{{cat.name}}</b>
+              </button>
+            </h5>
+          </div>
+          <div  id="cars" *ngIf= "categoryId == cat.category_id" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li *ngFor="let subCat of subCategoryList" class="list-group-item"><a  [routerLink]="['/create-post',cat.category_id + ',' + subCat.sub_category_id]" routerLink="/create-post">{{subCat.name}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Start footer copy right row -->
+  <div class="container-fluid footer_copy-right mt-5 pt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 copyright_left_content">
+          <p>Copyright &#9400;2020 <a routerLink="/#">Genie.</a> All Rights Reserved.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 copyright_right_content">
+          <div class="copy_right_socia_icons">
+            <p>Powered by <a href="https://www.versatilemobitech.com/" target="_block">Versatile Mobitech Pvt.
+                Ltd</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End footer copy right row -->
+  
+  

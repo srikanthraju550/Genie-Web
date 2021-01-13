@@ -1,0 +1,24 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid bt_bg bb_bg">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Disclaimer</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <h2 class="pl_10">Disclaimer</h2>
+      <div class="col-lg-12">
+        <div class="disclaimer_content pt_20">
+          <div [innerHTML]="disclaimerData"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

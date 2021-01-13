@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container-fluid bb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="main_title pt_40">
+                <h2 class="mf_15">Chat With Seller</h2>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="messaging">
+                <div class="inbox_msg">
+                    <div class="mesgs" #scrollMe>
+                        <div class="msg_history">
+                            <div class="incoming_msg">
+                                <div class="received_msg">
+                                    <div class="received_withd_msg">
+                                        <p>user</p>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="outgoing_msg">
+                                <div class="sent_msg">
+                                    <p>seller</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="type_msg">
+                        <form class="pt-0">
+                            <div class="form-group input_msg_write">
+                                <input type="text" class="form-control write_msg" placeholder="Type a message"
+                                   [(ngModel)]="message" name="message" />
+                            </div>
+                            <div class="mt-3">
+                                <button class="msg_send_btn" (click)="sendMessage()" type="submit"><i class="fa fa-paper-plane-o"
+                                        aria-hidden="true"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

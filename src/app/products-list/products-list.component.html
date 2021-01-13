@@ -1,0 +1,243 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid cars_categery_row bt_bg">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li *ngIf="productsData!=undefined && productsData" class="breadcrumb-item">
+            <a>{{productsData[0].category}}</a></li>
+          <li *ngIf="productsData!=undefined && productsData" class="breadcrumb-item active" aria-current="page">
+            {{productsData[0].sub_category}}</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="row pt_20">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <p class="fs_20 pb_20">Filters</p>
+
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-6">
+
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+            <input type="text" class="form-control" id="search-text" aria-describedby="search-text"
+              [(ngModel)]="searchText" placeholder="Enter text to search" autofocus>
+          </div>
+        </div>
+        <!-- <div class="filter_right_icons_row nav" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="multi_items_tab" data-toggle="tab" href="#multi_items_row" role="tab"
+            aria-controls="multi_items_tab" aria-selected="true"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+          <a class="nav-item nav-link" id="single_items_tab" data-toggle="tab" href="#single_items_row" role="tab"
+            aria-controls="single_items_row" aria-selected="false"><i class="fa fa-list" aria-hidden="true"></i></a>
+          <span class="pt_12">Sort By:</span>
+          <div class="btn-group published_btn">
+            <button type="button" class="btn dropdown-toggle btn_tradex_btn" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Date of Published
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/#">Price highest to lowest</a>
+              <a class="dropdown-item" routerLink="/#">Price Lowest to highest</a>
+              <a class="dropdown-item" routerLink="/#">Date of published</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End car categery row -->
+
+<!-- Start categery row -->
+<div class="container-fluid bb_bg">
+  <div class="container">
+    <div class="row">
+      <!-- start left nav categery -->
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="categery_vartical_nav">
+          <ul class="nav flex-column">
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#price" data-toggle="collapse" data-target="#price">Price <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="price" aria-expanded="false">
+                <!-- <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link py-0" routerLink="/#">Orders</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link collapsed py-1" routerLink="/#" data-toggle="collapse">Customers</a>
+                  </li>
+                </ul> -->
+                <div class="form-group">
+                  <!-- <input type="range" class="form-control-range" id="formControlRange"> -->
+                  <input name="ram" type="range" min="0" max="{{ ramMaxValue }}" [(ngModel)]="mymodel"
+                    (ngModelChange)="setRange($event)" value="0">
+
+                </div>
+                <!-- <div class="d-flex justify-content-center my-4 pt-3">
+                  <p>min price</p>
+                  <input type="range" class="form-control-range" id="formControlRange">
+                  <p>max price</p>
+                </div> -->
+              </div>
+            </li>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link collapsed" href="#brand" data-toggle="collapse" data-target="#brand">Brand <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="brand" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link py-0" routerLink="/#">Orders</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link collapsed py-1" routerLink="/#" data-toggle="collapse">Customers</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#year" data-toggle="collapse" data-target="#year">Year <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="year" aria-expanded="false">
+                
+                <div class="form-group">
+                  <input type="date" class="form-control-range" id="formControlRange">
+                </div>
+                <div class="form-group">
+                  <input type="date" class="form-control-range" id="formControlRange">
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#km" data-toggle="collapse" data-target="#km">KM Driven <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="km" aria-expanded="false">
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control-range" id="formControlRange" placeholder="start KM">
+                  </div> to
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control-range" id="formControlRange" placeholder="End KM">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <input type="button" class="form-control-range" id="formControlRange" value="apply">
+                  </div>
+                </div>
+              </div>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" data-toggle="collapse" data-target="#categery">Category <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse nd_dropdown" id="categery" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item" *ngFor="let cat of categoryList"><a class="nav-link">{{cat.name}}</a>
+                    <ul>
+                      <li *ngFor="let subcat of cat.sub_categories"><a class="nav-link" style="cursor: pointer;"
+                          (click)="getfiltereData(cat.category_id,subcat.sub_category_id)">{{subcat.name}}</a></li>
+                    </ul>
+                  </li>
+                  <!-- <li class="nav-item"><a class="nav-link" routerLink="/#marutisuzuki">Maruti-Suzuki</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#ford">Ford.</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#hyundai">Hyundai</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#mahindra">Mahindra</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#honda">Honda</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#renault">Renault</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#volkswagen">Volkswagen</a></li> -->
+                </ul>
+              </div>
+            </li>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link collapsed" href="#fuel" data-toggle="collapse" data-target="#fuel">Fuel Type <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="fuel" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link py-0" routerLink="/#">Petrol</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link collapsed py-1" routerLink="/#" data-toggle="collapse">Diesel</a>
+                  </li>
+                </ul>
+              </div>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#location" data-toggle="collapse" data-target="#location">Location <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="location" aria-expanded="false">
+                <div class="input-group form-group right_location_row">
+                  <span class="input-group-prepend left_icon" for="inputState">
+                    <div class="input-group-text"><i class="fa fa-crosshairs"></i></div>
+                  </span>
+                  <select id="inputState" class="form-control" (change)="changeLocation($event)">
+                    <option selected> Current Location</option>
+                    <option *ngFor="let loc of locations" [value]="loc.area"> {{loc.area}}</option>
+
+                  </select>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End left nav categery -->
+      <!-- filter:searchText ,  -->
+      <!-- start right categery body -->
+      <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="multi_items_row" role="tabpanel" aria-labelledby="multi_items_tab">
+            <div class="row pl_10 multi_item_section ">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 " *ngFor="let data of productsData |filter:searchText  |  paginate:  config">
+                  <div class="items_colum">
+                    <div class="item_img_row">
+                      <div class="favourite_icon_row">
+                        <a (click)="addwishList(data.product_id)">
+                          <i class="fa fa-heart-o favourite_icon" [ngStyle]="{color:data.color}" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <a [routerLink]="['/prod-details',data.product_id]"><img
+                          [src]="image_path+data.display_image" /></a>
+                    </div>
+                    <a [routerLink]="['/prod-details',data.product_id]">
+                      <div class="item_content">
+                        <h5 class="item_title_height">{{data.name}}</h5>
+                        <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> {{data.price}}</p>
+                        <!-- <p class="item_title_width">{{data.description}}</p> -->
+                        <!-- <p>2018 - 50,000 KM</p> -->
+                        <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> {{data.location}}
+                        </p>
+                        <p class="right">{{data.created_time}}</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+               
+           
+
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 20px;">
+                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+        
+
+
+      </div>
+      <!-- End right categery body -->
+    </div>
+  </div>
+</div>
+
+<!-- End categery row -->
+
+<app-footer></app-footer>

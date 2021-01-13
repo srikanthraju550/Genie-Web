@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://geniemarket.in/admin",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

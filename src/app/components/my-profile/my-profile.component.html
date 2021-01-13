@@ -1,0 +1,103 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid cars_categery_row bt_bg bb_bg">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">My Profile</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pb_40">
+        <div class="my_profile_row">
+          <div class="my_profile_img">
+            <img *ngIf="user_image!=''" style="height: 100px;width:100px;border-radius:50px;" [src]="user_image" />
+            <img *ngIf="user_image==''" src="assets/images/user-logo.png" />
+            <input style="padding-left:20px"   type="file" name="Edit Image" (change)="chooseImage($event.target.files)"  />
+            <!-- <a routerLink="/#"><img class="img_edit" src="assets/images/icons/camera-1.png" /></a> -->
+            <h3>hi, {{userData?.first_name}} {{userData?.last_name}}</h3>
+          </div>
+          <form [formGroup]="editForm" (ngSubmit)="editProfile()" class="needs-validation pt_30">
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+              </div>
+              <input type="text" class="form-control" formControlName="first_name" id="first_name"
+                placeholder="Enter Your First Name" [ngClass]="{ 'is-invalid': submitted && ef.first_name.errors }">
+              <div *ngIf="submitted && ef.first_name.errors" class="invalid-feedback">
+                <div *ngIf="ef.first_name.errors.required" style="text-align: center;">First Name is required</div>
+              </div>
+
+              <!-- <input type="text" class="form-control" placeholder="Enter User Name" aria-describedby="basic-addon1"
+                value=""> -->
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+              </div>
+              <input type="text" class="form-control" formControlName="last_name" id="last_name"
+                placeholder="Enter Your First Name">
+
+
+              <!-- <input type="text" class="form-control" placeholder="Enter User Name" aria-describedby="basic-addon1"
+                value=""> -->
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"
+                    aria-hidden="true"></i></span>
+              </div>
+              <input type="text" class="form-control" formControlName="email" id="email" placeholder="Enter Your Email">
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+              </div>
+              <input type="text" class="form-control" formControlName="mobile" id="mobile"
+                placeholder="Enter Your Mobile Num">
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"><i class="fa fa-mars-stroke"
+                    aria-hidden="true"></i></label>
+              </div>
+              <select formControlName="gender" class="custom-select">
+                <option>Gender</option>
+                <option *ngFor="let gen of genders" [ngValue]="gen">{{gen}}</option>
+                <!-- <option [ngValue]="Male">Male</option>
+                <option [ngValue]="Female">Female</option> -->
+              </select>
+              <div class="ml_15"></div>
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"
+                    aria-hidden="true"></i></span>
+              </div>
+              <input type="date" class="form-control" formControlName="dob" placeholder=""
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+              </div>
+              <input type="text" class="form-control" formControlName="address" id="address"
+                placeholder="Enter Your Address">
+            </div>
+            <div class="center input-group mb-3 center_btn">
+              <button type="submit" class="btn btn-clr wd_5">SAVE CHANGES</button>
+            </div>
+            <!-- <div class="col-md-6 offset-md-3  input-group mb-3 center_btn">
+              <button class="btn btn-bg" type="submit">CANCEL</button>
+              <div class="ml_15"></div>
+              <button class="btn btn-clr" type="submit">SAVE CHANGES</button>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

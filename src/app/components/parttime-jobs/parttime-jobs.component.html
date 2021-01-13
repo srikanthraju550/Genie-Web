@@ -1,0 +1,77 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid bt_bg bb_bg">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Part Time Jobs</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pb_40">
+        <div class="full_time_jobs_row">
+          <h3>Part Time Jobs</h3>
+          <form class="pt_30">
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Salary Period</option>
+                  <option>Hourly</option>
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                  <option>Yearly</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Position Type</option>
+                  <option>Contract</option>
+                  <option>Part Time</option>
+                  <option>Temporary</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-3 mb-3">
+              <label for="customRange" class="col-6 col-md-6 left">Salary min</label>
+              <label for="customRange" class="col-6 col-md-6 right">Salary max</label>
+              <div id="slider-range"></div>
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <input type="text" class="form-control" placeholder="Mobile Number *" aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <input type="text" class="form-control" placeholder="Location *" aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <input type="text" class="form-control" placeholder="Title" aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group">
+                <input type="number" class="form-control" placeholder="Experience *" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <textarea type="text" class="form-control" placeholder="Description"
+                aria-describedby="basic-addon1"></textarea>
+            </div>
+            <div class="col-md-6 offset-md-3 input-group mb-3">
+              <div class="input-group">
+                <input type="file" class="form-control" placeholder="Experience *" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-3  input-group mb-3 center_btn">
+              <button class="btn btn-bg" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

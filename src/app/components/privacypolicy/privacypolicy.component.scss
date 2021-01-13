@@ -1,0 +1,41 @@
+// Start breadcrumb categery 
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: transparent;
+    border-radius: .25rem;
+  
+    .breadcrumb-item+.breadcrumb-item::before {
+      display: inline-block;
+      padding-right: .5rem;
+      color: #6c757d;
+      content: ">";
+    }
+  
+    a {
+      color: #333;
+  
+      &:hover {
+        color: #1B6CA8;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .center {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .bb_bg {
+    border-bottom: solid 2px #eee;
+    padding-bottom: 30px;
+  }
+  
+  // End breadcrumb categery 
+  

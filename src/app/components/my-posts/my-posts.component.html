@@ -1,0 +1,64 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid cars_categery_row bt_bg">
+  <div class="container">
+    
+    <h3 style="text-align: center; margin-top: 15px;">My Posts</h3>
+  </div>
+</div>
+<!-- End car categery row -->
+
+<!-- Start categery row -->
+<div class="container-fluid bb_bg">
+  <div class="container">
+    <div class="row">
+      <!-- start right categery body -->
+      <div class="col-12 col-md-12" *ngFor="let data of myPosts;let i= index">
+        <div class="items_colum bg_white_red">
+          <div class="item_content col-12 col-md-12">
+         
+            <div class="row pl-3">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="item_img_row">
+                  <a routerLink="/#"><img src="assets/images/ty1.jpg" /></a>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+               
+                <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> {{data.price}}</p>
+                <!-- <p class="item_title_width">Good condition all accessories...</p> -->
+                
+                <!-- <p><i class="fa fa-eye" aria-hidden="true"></i> <b>Views</b>: 71 | 12/02/2020</p> -->
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <p><b>Company Name</b></p>
+                <p>{{data.name}}</p>
+                <p><b>Modal</b></p>
+                <p>{{data.created_time}}</p>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="favourite_icon_row">
+                  <a (click)="editPost(data)">
+                    <img src="assets/images/edit-icon.png" style="width: 40px;">
+                  </a>
+                  <a (click)="deleteMyPosts(data.product_id)">
+                    <img src="assets/images/close-icon.png" style="width: 45px;">
+                  </a>
+                </div>
+                <p style="color: rgb(27, 133, 27);"><b>Active</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+      
+
+      <!-- End right categery body -->
+    </div>
+  </div>
+</div>
+<!-- End categery row -->
+
+<app-footer></app-footer>

@@ -1,0 +1,411 @@
+<div id="row_top">
+  <!-- Start top login row -->
+  <div class="container-fluid top_login_bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <div class="top_login_row">
+
+            <ul class="right">
+              <li class="sell_product_btn"><a (click)="sellYourProduct()">Sell Your Product</a></li>
+              <li *ngIf="!hideLoginbtn" data-toggle="modal" data-target="#login_modal" (click)="loginpopup()">Login</li>
+
+              <div class="btn-group admin_accnt_row" *ngIf="hideLoginbtn" >
+                <button type="button" style="color:white" class="btn dropdown-toggle btn_transparent" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false" (click)="showProfileMenu()"><i class="fa fa-user" aria-hidden="true"></i>
+                  My account
+                </button>
+                
+                <div class="dropdown-menu" *ngIf="showDropDown" style="display: block;">
+                  <a class="dropdown-item dropdown_row " routerLink="/myprofile" routerLinkActive="active"><img
+                    src="assets/images/user-logo.png" />
+                 <span class="black-col"> My Profile </span></a>
+                <a class="dropdown-item dropdown_row black-col "  routerLink="/myposts" routerLinkActive="active"><img
+                    src="assets/images/icons/my-ads.png" />
+                    <span class="black-col"> My Posts</span></a>
+                <a class="dropdown-item dropdown_row black-col" routerLink="/wishlist" routerLinkActive="active"><img
+                    src="assets/images/icons/whishlist.png" />
+                    <span class="black-col">Wishlist</span></a>
+                <!-- <a class="dropdown-item dropdown_row black-col" routerLink="/subscribe-with-us"><img
+                    src="assets/images/icons/subscription.png" />
+                    <span class="black-col">Subscribe with us</span></a> -->
+                <!-- <a class="dropdown-item dropdown_row black-col" routerLink="/subscriptions"><img
+                    src="assets/images/icons/subscription.png" /> 
+                    <span class="black-col"> My Subscriptions</span></a> -->
+                <a class="dropdown-item dropdown_row black-col" routerLink="/chat"><img
+                    src="assets/images/icons/chathistory.png" />
+                    <span class="black-col"> Chat History</span></a>
+                <a class="dropdown-item dropdown_row black-col" routerLink="/support"><img
+                    src="assets/images/icons/support.png" />
+                    <span class="black-col"> Support</span></a>
+                <a class="dropdown-item dropdown_row black-col" routerLink="/about"><img
+                    src="assets/images/icons/about-us.png" />
+                    <span class="black-col">About us</span>
+                  </a>
+                <a class="dropdown-item dropdown_row black-col" routerLink="/disclaimer"><img
+                    src="assets/images/icons/disclaimer.png" />
+                    <span class="black-col">Disclaimer</span></a>
+                <a class="dropdown-item dropdown_row black-col" routerLink="/termsandconditions"><img
+                    src="assets/images/icons/terms-n-conditions.png" />
+                    <span class="black-col"> Terms & Conditions</span></a>
+                <!-- <a class="dropdown-item dropdown_row black-col" routerLink="/change-password"><img
+                    src="assets/images/icons/change-pwd.png" />
+                    <span class="black-col">Change password</span>
+                  </a> -->
+
+                <a class="dropdown-item dropdown_row black-col" (click)="logout()"><img src="assets/images/icons/logout.png" />
+                  <span class="black-col">  Logout</span></a>
+                </div>
+              </div>
+
+            
+
+
+              <div class="modal" id="login_modal">
+                <div class="modal-dialog modal_content_left">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <div class="modal_title_img">
+                        <img src="assets/images/geneni_logo.png" title="Genie" alt="Genie" />
+                      </div>
+                      <button type="button" #hideSocialLogin class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+
+                      <div class="center">
+                        <button type="submit" class="btn btn-clr wd_5" data-toggle="modal"
+                          data-target="#login_with_phone" data-dismiss="modal"><i class="fa fa-mobile"
+                            aria-hidden="true"></i> &nbsp; Continue With Phone</button>
+                      </div><br>
+                      <div class="center">
+                        <button class="btn btn-clr wd_5" (click)="signInWithGoogle()">
+                          <i class="fa fa-google" aria-hidden="true"></i> &nbsp; Continue With Google
+                        </button>
+                        <!-- <button type="submit"
+                          onclick="window.location.href='https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Fkeep.google.com%2F&followup=https%3A%2F%2Fkeep.google.com%2F&ltmpl=keep&flowName=GlifWebSignIn&flowEntry=ServiceLogin'"
+                          class="btn btn-clr wd_5"><i class="fa fa-google" aria-hidden="true"></i> &nbsp; Continue With
+                          Google</button> -->
+                      </div><br>
+                      <div class="center">
+                        <button class="btn btn-clr wd_5" (click)="signInWithFB()">
+                          <i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Continue With Facebook
+                        </button>
+                        <!-- <button type="submit" onclick="window.location.href='https://en-gb.facebook.com/login/'"
+                          class="btn btn-clr wd_5"><i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Continue
+                          With Facebook</button> -->
+                      </div><br>
+                      <p style="text-align: center;">We won't share your personal details with anyone</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--End Login Modal-->
+              <!--Login with phone-->
+              <div class="modal" id="login_with_phone">
+                <div class="modal-dialog modal_content_left">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <button type="button" class="close" data-toggle="modal" data-target="#login_modal"
+                        data-dismiss="modal"><i class="fa fa-angle-left"></i></button>
+                      <div class="modal_title_img">
+                        <img src="assets/images/geneni_logo.png" title="Genie" alt="Genie" />
+                      </div>
+                      <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form *ngIf="!showOtp" [formGroup]="loginForm" (ngSubmit)="sendOtp()" class="needs-validation">
+                        <h5 style="text-align: center;">Enter Your Phone</h5>
+                        <div class="form-group">
+
+                          <input type="text" class="form-control" formControlName="mobile" id="mobile"
+                            placeholder="Enter Your Phone" [ngClass]="{ 'is-invalid': submitted && lf.mobile.errors }">
+                          <div *ngIf="submitted && lf.mobile.errors" class="invalid-feedback">
+                            <div *ngIf="lf.mobile.errors.required" style="text-align: center;">Phone Number is required
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <!-- <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" formControlName="password" placeholder="Password"
+                              [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                              <div *ngIf="f.password.errors.required">Password is required</div>
+                              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
+                          </div> 
+                          
+                          <div class="form-group form-check">
+                            <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+                              [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                            <label for="acceptTerms" class="form-check-label"><b>Accept <a routerLink="/termsandconditions"
+                                  data-dismiss="modal">Terms & Conditions</a></b></label>
+                            <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is
+                              required</div>
+                          </div>-->
+
+                        <div class="center">
+                          <button type="submit" class="btn btn-clr wd_5">Next</button>
+                        </div>
+
+                      </form>
+
+                      <form *ngIf="showOtp" class="needs-validation">
+                        <h5 style="text-align: center;">Enter Your OTP</h5>
+
+
+                        <div class="form-group">
+
+                          <input type="text" class="form-control" [(ngModel)]="modelOtp" name='otp'
+                            placeholder="Enter Your OTP">
+                          <!-- <div *ngIf="errorOtp" class="invalid-feedback">
+                              <div style="text-align: center;">Wrong OTP</div>
+                            </div> -->
+                        </div>
+
+                        <div class="center">
+                          <button type="submit" class="btn btn-clr wd_5" (click)="login()">Login</button>
+                        </div>
+
+                      </form>
+                      <br>
+                      <p>We won't reveal your phone number to anyone else nor use it to send you spam</p>
+                    </div>
+
+                    <div class="modal-footer">
+                      <div class="left_modal_content">
+                        <p>Not a Member? <a id="signupModal" data-toggle="modal" data-target="#signup_modal"
+                            data-dismiss="modal">Sign Up</a></p>
+                        <p><a href="#" data-toggle="modal" data-target="#forgot_modal" data-dismiss="modal">Forgot
+                            Password?</a></p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Login with Phone-->
+              <!--Start forgot password Modal -->
+              <div class="modal" id="forgot_modal">
+                <div class="modal-dialog modal_content_left">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <div class="modal_title_img">
+                        <img src="assets/images/geneni_logo.png" title="Genie" alt="Genie" />
+                      </div>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body pb-4">
+                      <form class="needs-validation">
+                        <div class="form-group">
+                          <label for="uname">Email:</label>
+                          <input type="text" class="form-control" id="uname" placeholder="Email" required>
+                          <div class="valid-feedback">Valid.</div>
+                          <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="center">
+                          <button type="submit" class="btn btn-clr wd_5">Continue</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End forgot password Modal-->
+              <!-- <li data-toggle="modal" data-target="#signup_modal">Signup</li> -->
+              <!--Start Signup Modal-->
+              <div  class="modal" id="signup_modal">
+                <div class="modal-dialog modal_content_left">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <div class="modal_title_img">
+                        <img src="assets/images/geneni_logo.png" title="Genie" alt="Genie" />
+                      </div>
+                      <button type="button" #signupclosebutton class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body pb-3">
+                      <form class="needs-validation" [formGroup]="registerForm" (ngSubmit)="register()">
+                        <div class="form-group">
+                          <label for="fname">First Name:</label>
+                          <input type="text" class="form-control" formControlName="first_name" id="firstName"
+                            placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }">
+                          <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.first_name.errors.required" style="text-align: center;">First Name is required
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="lname">Last Name:</label>
+                          <input type="text" class="form-control" formControlName="last_name" id="lastName"
+                            placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }">
+                          <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.last_name.errors.required" style="text-align: center;">Last Name is required
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="lname">Mobile Number:</label>
+                          <input type="text" class="form-control" formControlName="mobile" id="mobile"
+                            placeholder="Mobile Num" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+                          <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                            <div *ngIf="f.mobile.errors.required" style="text-align: center;">Mobile is required</div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="lname">Address:</label>
+                          <input type="text" class="form-control" formControlName="address" id="address"
+                            placeholder="Address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                            <div *ngIf="f.address.errors.required" style="text-align: center;">Address is required</div>
+                          </div>
+                        </div>
+                        <div class="center">
+                          <button type="submit" class="btn btn-clr wd_5">Sign Up</button>
+                        </div>
+                        <div class="form-group modal_left_content pt-4">
+                          <label>Already have an account? <a href="#" data-toggle="modal" data-target="#login_modal"
+                              data-dismiss="modal">Login</a></label>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Signup Modal-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End top login row -->
+
+  <!-- Start top logo row -->
+  <div class="container-fluid top_logo_bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+          <div class="main_logo">
+            <a routerLink="/"><img src="assets/images/geneni_logo.png" title="Genie" alt="Genie" /></a>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 col-md-5 col-lg-6 col-xl-6">
+          <div class="input-group mid_search_row">
+            <!-- <input class="form-control" type="text" placeholder="Search Cars, Trucks, Bikes and more...">
+            <span class="input-group-append right_icon">
+              <div class="input-group-text" style="z-index: -1;"><a routerLink="/#"><i class="fa fa-search"></i></a>
+              </div>
+            </span> -->
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+          <div class="input-group form-group right_location_row">
+            <span class="input-group-prepend left_icon" for="inputState">
+              <div class="input-group-text" style="z-index: -1;"><i class="fa fa-crosshairs"></i></div>
+            </span>
+            <!-- <input class="form-control py-2 border-left-0" type="text" placeholder="Location"> -->
+            <select id="inputState" class="form-control location_left_50" (change)="changeLocation($event)">
+              <option selected> Select Location</option>
+              <option *ngFor="let loc of locations" style="padding-left: 10px !important;" [value]="loc.area"> {{loc.area}}</option>
+              <!-- <option style="padding-left: 10px !important;"> Kerala</option>
+              <option style="padding-left: 10px !important;"> Tamil Nadu</option>
+              <option style="padding-left: 10px !important;"> Maharashtra</option> -->
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- End top logo row -->
+</div>
+<!-- Start navbar row -->
+<nav class="navbar navbar-expand-lg navbar-dark mt_10">
+  <div class="container">
+    <p class="navbar-toggler menu_text">Menu</p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentLG"
+      aria-controls="navbarSupportedContentLG" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContentLG">
+      <ul class="navbar-nav mr-auto m_auto mega_menu">
+        <li class="nav-item dropdown mega_dropdown">
+          <a class="nav-link dropdown-toggle" (click)="showCategories()" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All
+            Categories
+          </a>
+          <div *ngIf="showCat" class="dropdown-menu mega_dropdown-menu" style="display: block;"
+            aria-labelledby="navbarDropdown">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <ul class="nav flex-column">
+                    <li class="nav-item" *ngFor="let cat of categoryList"><a class="nav-link active pt_20"
+                      >{{cat.name}}</a>
+                      <ul class="nav flex-column">
+                      <li class="nav-item" *ngFor="let sCat of cat.sub_categories"><a class="nav-link" [routerLink]="['/product-list',cat.category_id + ',' + sCat.sub_category_id]"  id="sub_cat">{{sCat.name}}</a></li>
+                    </ul>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown mega_dropdown" *ngFor="let cat of categoryList">
+          <a class="nav-link dropdown-toggle" (click)="showSubCategories(cat.category_id)" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{cat.name}}
+          </a>
+          <div *ngIf="showsubCat" class="dropdown-menu mega_dropdown-menu" style="display: block;"
+            aria-labelledby="navbarDropdown">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <ul class="nav flex-column">
+                    <li class="nav-item" *ngFor="let scat of subCatList"><a class="nav-link active pt_20" [routerLink]="['/product-list',catId + ',' + scat.sub_category_id]"
+                      >{{scat.name}}</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        
+        <!-- <li class="nav-item" *ngFor="let cat of categoryList"><a class="nav-link" routerLink="/cars">{{cat.name}}</a>
+        </li> -->
+
+        <!-- <li class="nav-item"><a class="nav-link" routerLink="/cycles" routerLinkActive="active">Properties</a></li>-->
+        <!-- <li class="nav-item"><a class="nav-link" routerLink="/tools" routerLinkActive="active">Books</a></li>  -->
+        <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-nav" href="#" id="navbarDropdownLG" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLinkActive="active">More</a>
+              <div class="dropdown-menu dropdown-menu_two" aria-labelledby="navbarDropdownLG">
+                <a class="nav-link" routerLink="#" routerLinkActive="active">Fashion</a>
+                <a class="nav-link" routerLink="/jobs" routerLinkActive="active">Jobs</a>
+                <a class="nav-link" routerLink="/cycles" routerLinkActive="active">Properties</a>
+                <a class="nav-link" routerLink="/tools" routerLinkActive="active">Books</a>
+              </div>
+            </li> -->
+        <!-- <li class="nav-item"><a class="nav-link" routerLink="/computers" routerLinkActive="active">Others</a></li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End navbar row -->

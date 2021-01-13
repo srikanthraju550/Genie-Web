@@ -1,0 +1,103 @@
+.post_top_nav {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-bottom: solid 1px #eee;
+    margin-left: 30px;
+  
+    a {
+      color: #000;
+    }
+  
+    i {
+      padding-top: 10px;
+    }
+  
+    img {
+      height: 60px;
+      padding-left: 50px;
+    }
+  }
+  
+  .center {
+    text-align: center;
+  
+    .wd_5 {
+      width: 70%;
+    }
+  }
+  
+  .border_one_px {
+    border: 1px solid rgba(0, 47, 52, .2);
+    padding: 0px 30px;
+  }
+  
+  .title_two {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .my_profile_img {
+    text-align: center;
+  
+    .img_edit {
+      position: absolute;
+      width: 35px;
+      margin-top: 60px;
+      margin-left: -35px;
+    }
+  }
+   
+  .btn-info {
+    color: #fff;
+    background-color: #0E3654;
+    border-color: #0E3654;
+  
+    &:hover {
+      background-color: #1B6CA8;
+    }
+  }
+  
+  // Start footer copyright section
+  .footer_copy-right {
+    border-top: solid 3px #e0dede;
+  
+    .copyright_left_content {
+      p {
+        padding: 10px 0px;
+      }
+  
+      a {
+        color: #000;
+  
+        &:hover {
+          color: #1B6CA8;
+          text-decoration: none;
+        }
+      }
+    }
+  
+    .copyright_right_content {
+      p {
+        padding: 10px 0px;
+        text-align: right;
+      }
+  
+      a {
+        color: #000;
+  
+        &:hover {
+          color: #1B6CA8;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .form-group{
+    margin-bottom: 0.5em;
+  }
+  .pt-3, .py-3{
+    padding-top: 0.5em;
+  }
+  
+  // Endfooter copyright section
+  

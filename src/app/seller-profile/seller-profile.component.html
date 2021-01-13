@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="container-fluid bb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="main_title pt_40">
+                <h2 class="mf_15">Seller Profile</h2>
+              </div>
+        </div>
+        <div class="row ">
+            <div >
+                <h4 class="mf_15"> {{sellerDetails.first_name}} {{sellerDetails.last_name}}</h4>
+                <ul>
+                    <li>Email : {{sellerDetails.email}} </li>
+                    <li>DOB : {{sellerDetails.dob}} </li>
+                    <li>Mobile : {{sellerDetails.mobile}} </li>
+                    <li>Address : {{sellerDetails.address}} </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid recommended_row pb_30">
+        <div class="container">
+          <div class="row">
+            <div class="main_title pt_40">
+              <h2 class="mf_15">Seller Products</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngFor="let ld of sellerProducts;let i=index" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+              <div class="items_colum">
+                <div class="item_img_row">
+                  <div class="favourite_icon_row">
+                    <a >
+                      <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <a [routerLink]="['/prod-details',ld.product_id]"><img [src]="product_image_path + ld.display_image" /></a>
+                </div>
+                <a [routerLink]="['/prod-details',ld.product_id]">
+                  <div class="item_content">`
+                    <h5 class="item_title_height">{{ld.name}}</h5>
+                    <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> {{ld.price}}</p>
+                    <p class="item_title_width">Good condition all accessories...</p>
+                    <p>{{ld.created_time}}</p>
+                    <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ld.location}}</p>
+                    <!-- <p class="right">Today</p> -->
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="view_btn center">
+              <button type="button" class="btn btn-clr">View More</button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+</div>
+<app-footer></app-footer>

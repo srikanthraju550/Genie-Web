@@ -1,0 +1,71 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid cars_categery_row bt_bg">
+  <div class="container">
+    <!-- <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/cars">Cars</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cars in Telangana</li>
+        </ol>
+      </nav>
+    </div> -->
+    <!-- <div class="row">
+      <div class="wishlist_tabs_row">
+        <ol>
+          <li><a routerLink="/post">Sell Products</a></li>
+          <li class="active"><a routerLink="/wishlist">Wishlist</a></li>
+        </ol>
+      </div>
+    </div> -->
+    <h3 style="text-align: center; margin-top: 15px;">Wishlist</h3>
+  </div>
+</div>
+<!-- End car categery row -->
+
+<!-- Start categery row -->
+<div class="container-fluid bb_bg">
+  <div class="container">
+    <div class="row">
+      <!-- start right categery body -->
+      <div class="col-xs-12 col-lg-12">
+        <div class="row pl_10">
+          <div *ngFor="let data of wishListData" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+            <div class="items_colum">
+              <div class="item_img_row">
+                <div class="favourite_icon_row">
+                  <a >
+                    <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <a ><img src="assets/images/surya_t_f.jpg" /></a>
+              </div>
+              <a>
+                <div class="item_content">
+                  <h5 class="item_title_height">{{data.name}}</h5>
+                  <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> {{data.price}}</p>
+                  <p class="item_title_width">Good condition</p>
+                  <p>{{data.created_time}}</p>
+                  <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> {{data.location}}
+                  </p>
+                  <p class="right"><a class="right" (click)="delete(data.product_id)">Delete</a>Yesterday</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+        <!-- <div class="row">
+          <div class="view_btn center">
+            <button type="button" class="btn btn-danger">View More</button>
+          </div>
+        </div> -->
+      </div>
+      <!-- End right categery body -->
+    </div>
+  </div>
+</div>
+<!-- End categery row -->
+
+<app-footer></app-footer>

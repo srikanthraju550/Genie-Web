@@ -1,0 +1,436 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid cars_categery_row bt_bg">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/cycles">Cycles</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cycles in Telangana</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <h2 class="pl_10">Used Cycles in Hyderabad</h2>
+    </div>
+    <div class="row pt_20">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <p class="fs_20 pb_20">Filters</p>
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="filter_right_icons_row nav" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="multi_items_tab" data-toggle="tab" href="#multi_items_row" role="tab"
+            aria-controls="multi_items_tab" aria-selected="true"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+          <a class="nav-item nav-link" id="single_items_tab" data-toggle="tab" href="#single_items_row" role="tab"
+            aria-controls="single_items_row" aria-selected="false"><i class="fa fa-list" aria-hidden="true"></i></a>
+          <span class="pt_12">Sort By:</span>
+          <!-- Date Published button -->
+          <div class="btn-group published_btn">
+            <button type="button" class="btn dropdown-toggle btn_tradex_btn" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Date Published
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/#">Low to High</a>
+              <a class="dropdown-item" routerLink="/#">High to Low</a>
+              <a class="dropdown-item" routerLink="/#">Relevance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End car categery row -->
+
+<!-- Start categery row -->
+<div class="container-fluid bb_bg">
+  <div class="container">
+    <div class="row">
+      <!-- start left nav categery -->
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="categery_vartical_nav">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#categery" data-toggle="collapse" data-target="#categery">Category <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse nd_dropdown" id="categery" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link" routerLink="/#herocycles">Hero</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#atlascycles">Atlas</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#avoncycles">Avon</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#herculescycles">Hercules </a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#lasovereigncycles">La Sovereign</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#bsaladybird">BSA Ladybird</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#firefoxcycles">Firefox</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/#montracycles">Montra</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#location" data-toggle="collapse" data-target="#location">Location <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="location" aria-expanded="false">
+                <div class="input-group form-group right_location_row">
+                  <span class="input-group-prepend left_icon" for="inputState">
+                    <div class="input-group-text"><i class="fa fa-crosshairs"></i></div>
+                  </span>
+                  <!-- <input class="form-control py-2 border-left-0" type="text" placeholder="Location"> -->
+                  <select id="inputState" class="form-control">
+                    <option selected> Current Location</option>
+                    <option> Hyderabad</option>
+                    <option> Kerala</option>
+                    <option> Tamil Nadu</option>
+                    <option> Maharashtra</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#brand" data-toggle="collapse" data-target="#brand">Brand <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="brand" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link py-0" routerLink="/#">Orders</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link collapsed py-1" routerLink="/#" data-toggle="collapse">Customers</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#price" data-toggle="collapse" data-target="#price">Price <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="price" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link py-0" routerLink="/#">Orders</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link collapsed py-1" routerLink="/#" data-toggle="collapse">Customers</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#year" data-toggle="collapse" data-target="#year">Year <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="year" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link py-0" routerLink="/#">Orders</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link collapsed py-1" routerLink="/#" data-toggle="collapse">Customers</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#fuel" data-toggle="collapse" data-target="#fuel">Fuel <i
+                  class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <div class="collapse" id="fuel" aria-expanded="false">
+                <ul class="flex-column nav no_border">
+                  <li class="nav-item"><a class="nav-link py-0" routerLink="/#">Orders</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link collapsed py-1" routerLink="/#" data-toggle="collapse">Customers</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End left nav categery -->
+      <!-- start right categery body -->
+      <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="multi_items_row" role="tabpanel" aria-labelledby="multi_items_tab">
+            <div class="row pl_10 multi_item_section">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="items_colum">
+                  <div class="item_img_row">
+                    <div class="favourite_icon_row">
+                      <a routerLink="/#">
+                        <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                    <a routerLink="/fordendevour"><img src="assets/images/cycles-01.jpg" /></a>
+                  </div>
+                  <a routerLink="/fordendevour">
+                    <div class="item_content">
+                      <h5 class="item_title_height">AVS Bicycle </h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 30,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2018</p>
+                      <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Today</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-02.jpg" />
+                    </div>
+                    <div class="item_content">
+                      <h5 class="item_title_height">Avon Gutts Cycles</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 12,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2008</p>
+                      <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Today</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-03.jpg" />
+                    </div>
+                    <div class="item_content">
+                      <h5 class="item_title_height">Ruffian eBike</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 65,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2008</p>
+                      <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Today</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-04.jpg" />
+                    </div>
+                    <div class="item_content">
+                      <h5 class="item_title_height">Track and Trail-Bicycles</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 15,000</p>
+                      <p class="item_title_width">Good condition all accessories...</p>
+                      <p>2018</p>
+                      <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Today</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-05.jpg" />
+                    </div>
+                    <div class="item_content">
+                      <h5 class="item_title_height">8-Speed-Lochside</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 25,000</p>
+                      <p class="item_title_width">Good condition all accessories...</p>
+                      <p>2018</p>
+                      <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Yesterday</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-06.jpg" />
+                    </div>
+                    <div class="item_content">
+                      <h5 class="item_title_height">Race XT Bicycles</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 85,000</p>
+                      <p class="item_title_width">Good condition all accessories...</p>
+                      <p>2018</p>
+                      <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Yesterday</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="single_items_row" role="tabpanel" aria-labelledby="single_items_tab">
+            <div class="row pl_10 single_item_section">
+              <div class="col-12 col-md-12">
+                <div class="items_colum">
+                  <a routerLink="/fordendevour">
+                    <div class="item_img_row col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-01.jpg" />
+                    </div>
+                    <div class="item_content col-12 col-sm-12 col-md-7 col-lg-7">
+                      <h5 class="item_title_height">AVS Bicycle </h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 30,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2018</p>
+                      <p><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Nov 21</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-02.jpg" />
+                    </div>
+                    <div class="item_content col-12 col-sm-12 col-md-7 col-lg-7">
+                      <h5 class="item_title_height">Avon Gutts Cycles</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 12,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2008</p>
+                      <p><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur,
+                        Telangana</p>
+                      <p class="right">Yesterday</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-03.jpg" />
+                    </div>
+                    <div class="item_content col-12 col-sm-12 col-md-7 col-lg-7">
+                      <h5 class="item_title_height">Ruffian eBike</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 65,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2008</p>
+                      <p><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur, Telangana</p>
+                      <p class="right">Yesterday</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-04.jpg" />
+                    </div>
+                    <div class="item_content col-12 col-sm-12 col-md-7 col-lg-7">
+                      <h5 class="item_title_height">Track and Trail-Bicycles</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 15,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2018</p>
+                      <p><i class="fa fa-map-marker" aria-hidden="true"></i> Kondapur, Telangana</p>
+                      <p class="right">Nov 09</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-05.jpg" />
+                    </div>
+                    <div class="item_content col-12 col-sm-12 col-md-7 col-lg-7">
+                      <h5 class="item_title_height">8-Speed-Lochside</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 25,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2018</p>
+                      <p class="right">Nov 30</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="items_colum">
+                  <a routerLink="/#">
+                    <div class="item_img_row col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="favourite_icon_row">
+                        <a routerLink="/#">
+                          <i class="fa fa-heart-o favourite_icon" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <img src="assets/images/cycles-06.jpg" />
+                    </div>
+                    <div class="item_content col-12 col-sm-12 col-md-7 col-lg-7">
+                      <h5 class="item_title_height">Race XT Bicycles</h5>
+                      <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> 85,000</p>
+                      <p class="item_title_width">Good condition</p>
+                      <p>2018</p>
+                      <p class="right">Yesterday</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="view_btn center">
+            <button type="button" class="btn btn-clr">View More</button>
+          </div>
+        </div>
+      </div>
+      <!-- End right categery body -->
+    </div>
+  </div>
+</div>
+<!-- End categery row -->
+
+<app-footer></app-footer>

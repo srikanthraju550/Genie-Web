@@ -1,0 +1,75 @@
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Site Map</li>
+        </ol>
+      </nav>
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid bb_bg">
+  <div class="container">
+    <div class="center">
+      <h2 class="pl_10">Site Map</h2>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="sitemap_row pt-3">
+          <ul>
+            <li>All Categories </li>
+            <ul>
+              <li *ngFor="let cat of categoryList"><a>{{cat.name}}</a>
+              <ul>
+                <li *ngFor="let scat of categoryList"><a [routerLink]="['/product-list',cat.category_id + ',' + scat.sub_category_id]">{{scat.name}}</a></li>
+                
+              </ul>
+            </li>             
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="sitemap_row pt-3">
+          <ul>
+            <li><a routerLink="/#">Post your Ad</a></li>
+            <ul>
+              <li><a routerLink="/post">Choose A Category</a></li>
+              <!-- <li><a routerLink="/create-post">Selected Category</a></li> -->
+            </ul>
+            <!-- <li><a routerLink="/#">Login</a></li>
+            <ul>
+              <li><a routerLink="/#">Sign Up</a></li>
+              <li><a routerLink="/#">Forgot Password</a></li>
+            </ul> -->
+            <!-- <li><a routerLink="/#">My Account</a></li>
+            <ul>
+              <li><a routerLink="/myprofile"> My Profile</a></li>
+              <li><a routerLink="/myads"> My Ads</a></li>
+              <li><a routerLink="/wishlist"> Wishlist</a></li>
+              <li><a routerLink="/support"> Support</a></li>
+              <li><a routerLink="/about"> About us</a></li>
+              <li><a routerLink="/disclaimer"> Disclaimer</a></li>
+              <li><a routerLink="/changepwd"> Change password</a></li>
+              <li><a routerLink="/termsandconditions"> Terms & Conditions</a></li>
+              <li><a routerLink="/#"> My Subscription</a></li>
+              <li><a routerLink="/chat"> Chat History</a></li>
+              <li><a routerLink="/#"> Logout</a></li>
+            </ul>
+            <li><a routerLink="/about">About Us</a></li>
+            <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+            <li><a routerLink="/termsandconditions">Terms & Conditions</a></li>
+            <li><a routerLink="/contact">Contact Us</a></li>
+            <li><a routerLink="/sitemap">Site Map</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

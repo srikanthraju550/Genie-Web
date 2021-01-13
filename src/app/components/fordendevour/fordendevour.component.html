@@ -1,0 +1,168 @@
+<app-header></app-header>
+<!-- Start car breadcrumb row -->
+<div class="container-fluid cars_categery_row bt_bg">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/#">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/cars">Cars</a></li>
+          <li class="breadcrumb-item"><a routerLink="/#">Cars in Telangana</a></li>
+          <li class="breadcrumb-item"><a routerLink="/#">Ford</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Endevour</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="container-fluid bb_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+        <div class="border_carousel">
+          <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"
+                style="background-image: url(assets/images/ford-endeavour-1.jpg);"></li>
+              <li data-target="#demo" data-slide-to="1" class="img_2"
+                style="background-image: url(assets/images/ford-endeavour-2.jpg);"></li>
+              <li data-target="#demo" data-slide-to="2" class="img_3"
+                style="background-image: url(assets/images/ford-endeavour-3.jpg);"></li>
+              <li data-target="#demo" data-slide-to="3" class="img_4"
+                style="background-image: url(assets/images/ford-endeavour-4.jpeg);"></li>
+              <li data-target="#demo" data-slide-to="4" class="img_5"
+                style="background-image: url(assets/images/ford-endeavour-5.jpg);"></li>
+            </ul>
+            <!-- The slideshow -->
+            <div class="carousel-inner img_responsive">
+              <div class="carousel-item active">
+                <img src="assets/images/ford-endeavour-1.jpg" alt="ford-endeavour" title="ford-endeavour">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/ford-endeavour-2.jpg" alt="ford-endeavour" title="ford-endeavour">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/ford-endeavour-3.jpg" alt="ford-endeavour" title="ford-endeavour">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/ford-endeavour-4.jpeg" alt="ford-endeavour" title="ford-endeavour">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/ford-endeavour-5.jpg" alt="ford-endeavour" title="ford-endeavour">
+              </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </div>
+        <div class="details_border_div">
+          <div class="item_details">
+            <h3>Details</h3>
+            <div class="row item_content">
+              <div class="left_details pt_10">
+                <p><b>Brand</b></p>
+              </div>
+              <div class="right_details pt_10">
+                <p>Ford</p>
+              </div>
+              <div class="left_details pt_10">
+                <p><b>Model</b></p>
+              </div>
+              <div class="right_details pt_10">
+                <p>Endeavour</p>
+              </div>
+              <div class="left_details pt_10">
+                <p><b>Year</b></p>
+              </div>
+              <div class="right_details pt_10">
+                <p>2012</p>
+              </div>
+              <div class="left_details pt_10">
+                <p><b>Fuel</b></p>
+              </div>
+              <div class="right_details pt_10">
+                <p>Diesel</p>
+              </div>
+              <div class="left_details pt_10">
+                <p><b>KM Driven</b></p>
+              </div>
+              <div class="right_details pt_10">
+                <p>55,000</p>
+              </div>
+              <div class="left_details pt_10">
+                <p><a routerLink="/#">Show More</a></p>
+              </div>
+              <div class="right_details pt_10">
+                <p></p>
+              </div>
+              <!-- <div class="left_details pt_10">
+                <a routerLink="/#"> <img src="../../../assets/images/call.png" style="width: 50px;"></a>
+                <a routerLink="/#"> <img src="../../../assets/images/msg.png" style="width: 52px;"></a>
+              </div> -->
+              
+            </div>
+            <div class="item_describtion pb_30">
+              <h3>Description</h3>
+              <p class="pl_15">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+        <div class="price_details_border">
+          <h2 class="pt_10"><i _ngcontent-nto-c1="" aria-hidden="true" class="fa fa-inr"></i> 24,00,000
+          </h2>
+          <div class="price_right_icons">
+            <a routerLink="/#"><img src="assets/images/share.svg" alt="Share" title="Share"></a>
+            <a routerLink="/#"><img src="assets/images/heart.svg" alt="Favourite" title="Favourite"
+                onclick="changeImage()" id="myImage"></a>
+          </div>
+          <h5 class="pt_10">2007.0 - 82,000 Km</h5>
+          <h5 class="pt_10">Ford Endeavour. 2012, Diesel</h5>
+          <div class="row pt_10 address_date">
+            <p class="col-8 col-sm-8">Begumpet, Secunderabad, Telangana.</p>
+            <p class="col-4 col-sm-4 right">Aug 29</p>
+          </div>
+        </div>
+
+        <!-- <div class="seller_details_border">
+          <h3>Seller Description</h3>
+          <div class="row pt_20 pb_30">
+            <div class="seller_details_left">
+              <h4>John Thomos</h4>
+              <p>Member since May 2019</p>
+            </div>
+            <div class="seller_details_right">
+              <p><i class="fa fa-angle-right" aria-hidden="true"></i></p>
+            </div>
+            <div class="full_btn mt_20">
+              <a href="#">Chat with Seller</a>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="posted_details_border">
+          <h3>Posted in</h3>
+          <p>Begumpet, Secunderabad, Telangana.</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30450.56171878614!2d78.4502662916223!3d17.44438122689403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90a3ed28854f%3A0x20084b938c2f1b8c!2sBegumpet%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1573802144124!5m2!1sen!2sin"
+            width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" class="pt_10"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End car breadcrumb row -->
+<app-footer></app-footer>

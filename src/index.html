@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Genie</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link type="text/css" href="assets/css/bootstrap.min.css">
+  <link  type="text/css" href="assets/css/bootstrap.css">
+
+  <!-- <link  type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link  type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css?family=Cabin|Fira+Sans|Heebo|Karla|Noto+Sans+JP|PT+Sans|Poppins|Source+Sans+Pro&display=swap"
+    rel="stylesheet">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+  rel="stylesheet">
+  
+</head>
+
+<body>
+  <app-root></app-root>
+  <script type="text/js" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <!-- <script type="text/js" src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/js" src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoh6_G5BUkgyKdG59wBXjP8bdIDWVMWRA&libraries"
+      
+    ></script>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <!-- <script type="text/js" src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script type="text/js" src="../../node_modules/jquery/dist/jquery.min.js"></script> -->
+  <script src='assets/js/jquery-3.3.1.min.js'></script>
+  <script src="assets/js/pagination.js"></script>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js'></script>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+  // Start dropdown
+  $(document).on('click', '.dropdown-menu_two a', function () {
+    // $('.dropdown-menu_two a').removeClass('active');
+    $('.dropdown-nav').addClass('active');
+    // Start min max range section
+    $("#slider-range").slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [75, 300],
+      slide: function (event, ui) {
+        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+      }
+    });
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+      " - $" + $("#slider-range").slider("values", 1));
+    // End min max range section
+  });
+  // End dropdown
+
+  // Start password show
+  function mypwd_show_hide() {
+    var x = document.getElementById("show_hide_pwd");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+  function mypwd_show_hide1() {
+    var x = document.getElementById("show_hide_pwd1");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  // End password show
+
+  // Start Change the toggle image
+  function changeImage() {
+    var image = document.getElementById('myImage');
+    if (image.src.match("assets/images/heart-1.svg")) {
+      image.src = "assets/images/heart.svg";
+    } else {
+      image.src = "assets/images/heart-1.svg";
+    }
+  }
+  // End Change the toggle image
+
+  // Start min max range section
+  $(function () {
+    $("#slider-range").slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [75, 300],
+      slide: function (event, ui) {
+        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+      }
+    });
+
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+      " - $" + $("#slider-range").slider("values", 1));
+  });
+  // End min max range section
+
+
+
+  ///////////////// fixed menu on scroll for desktop
+if ($(window).width() > 992) {
+  $(window).scroll(function(){  
+     if ($(this).scrollTop() > 40) {
+        $('#row_top').addClass("fixed-top");
+        // add padding top to show content behind navbar
+        $('body').css('padding-top', $('.htop').outerHeight() + 'px');
+      }else{
+        $('#row_top').removeClass("fixed-top");
+         // remove padding top from body
+        $('body').css('padding-top', '0');
+      }   
+  });
+} // end if
+
+</script>
+
+</html>

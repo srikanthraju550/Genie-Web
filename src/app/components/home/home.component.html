@@ -1,0 +1,209 @@
+<app-header></app-header>
+
+<!-- <div class="container-fluid carousel_row">
+  <div class="container">
+    <div class="row">
+      <div class="carousel_title">
+        <h1>Buy or Sell
+          <br>Find anything anywhere
+          <br> on <b>TradeX</b></h1>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div id="demo2" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li *ngFor="let img of banners;let i=index" data-target="#demo + i" data-slide-to="i" class="active"></li>
+
+  </ul>
+  <div class="carousel-inner">
+    <div *ngFor="let img of banners;let i=index" class="carousel-item" [ngClass]="{'active':i==0}">
+      <img [src]="bannerImgPath + img.banner" alt="" title="">
+      <div class="carousel-caption">
+        <!-- <div class="carousel_title">
+          <h1>Buy or Sell
+            <br>Find anything anywhere
+            <br> on <b>Genie</b></h1>
+        </div> -->
+      </div>
+    </div>
+    <!-- <div class="carousel-item">
+      <img src="assets/images/banner-02.jpg" alt="" title="">
+      <div class="carousel-caption">
+        <div class="carousel_title">
+          <h1>Buy or Sell
+            <br>Find anything anywhere
+            <br> on <b>Genie</b></h1>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/banner-03.jpg" alt="" title="">
+      <div class="carousel-caption">
+        <div class="carousel_title">
+          <h1>Buy or Sell
+            <br>Find anything anywhere
+            <br> on <b>Genie</b></h1>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <a class="carousel-control-prev" href="#demo2" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo2" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<!-- End Carousel row -->
+
+<!-- Start Recommended row -->
+<div class="container-fluid recommended_row pb_30">
+  <div class="container">
+    <div class="row">
+      <div class="main_title pt_40">
+        <h2 class="mf_15">Latest Deals</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let ld of latestDeals;let i=index" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+        <div class="items_colum">
+          <div class="item_img_row">
+            <div class="favourite_icon_row">
+              <a (click)="addwishList(ld.product_id)">
+                <i class="fa fa-heart-o favourite_icon" [ngStyle]="{color:ld.color}" aria-hidden="true"></i>
+              </a>
+            </div>
+            <a [routerLink]="['/prod-details',ld.product_id]"><img [src]="dealsPath + ld.display_image" /></a>
+          </div>
+          <a [routerLink]="['/prod-details',ld.product_id]">
+            <div class="item_content">`
+              <h5 class="item_title_height">{{ld.name}}</h5>
+              <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> {{ld.price}}</p>
+              <p class="item_title_width">Good condition all accessories...</p>
+              <p>{{ld.created_time}}</p>
+              <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ld.location}}</p>
+              <!-- <p class="right">Today</p> -->
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="hideLatestDetailsMore">
+      <div class="view_btn center">
+        <button type="button" class="btn btn-clr" (click)="viewLatestDeals()">View More</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Recommended row -->
+
+<!-- Start Carousel row -->
+<!-- <div class="container-fluid pb_30">
+  <div class="container">
+    <div class="row">
+      <div class="main_title pt_40">
+        <h2 class="mf_15">Recommended Appliances</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="demo" class="carousel slide pb_50" data-ride="carousel">
+   
+  <ul class="carousel-indicators indica_color_red">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/carousel_2.jpg" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/carousel_3.jpg" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/carousel_4.jpg" alt="">
+    </div>
+  </div>
+  
+</div> -->
+<div class="clear"></div>
+<!-- End Carousel row -->
+
+
+<!-- Start Recommended New row -->
+<div class="container-fluid recommended_row pb_30">
+  <div class="container">
+    <div class="row">
+      <div class="main_title pt_40">
+        <h2 class="mf_15">Recommended Deals</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let rd of recomendedDeals" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+        <div class="items_colum">
+          <div class="item_img_row">
+            <div class="favourite_icon_row">
+              <a (click)="addwishList(rd.product_id)">
+                <i class="fa fa-heart-o favourite_icon" [ngStyle]="{color:rd.color}" aria-hidden="true"></i>
+              </a>
+            </div>
+            <a [routerLink]="['/prod-details',rd.product_id]"><img [src]="dealsPath + rd.display_image" /></a>
+          </div>
+          <a [routerLink]="['/prod-details',rd.product_id]">
+            <div class="item_content">
+              <h5 class="item_title_height">{{rd.name}}</h5>
+              <p class="red"><i class="fa fa-inr" aria-hidden="true"></i> {{rd.price}}</p>
+              <p class="item_title_width">Good condition all accessories...</p>
+              <p>{{rd.created_time}}</p>
+              <p class="item_title_height"><i class="fa fa-map-marker" aria-hidden="true"></i> {{rd.location}}</p>
+              <!-- <p class="right">Yesterday</p> -->
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="hideRecommendedDetailsMore">
+      <div class="view_btn center">
+        <button type="button" class="btn btn-clr" (click)="viewRecommanded()">View More</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Recommended New row -->
+
+<!-- Start the TradeX row -->
+<div class="container-fluid the_tradex_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="the_tradex_left_img" >
+          <img *ngFor="let ad of reportAdds" [src]="banner_path + ad.banner" />
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="the_tradex_right_content">
+          <h1>Genie</h1>
+          <p>Buy, sell and find just about anything using the app on your mobile.</p>
+          <div class="apps_row">
+            <a routerLink="/#"><img class="g_play_img" src="assets/images/g_play.png" title="Google Play"
+                alt="Google Play" /></a>
+            <!-- <a routerLink="/#"><img src="assets/images/app_store.png" title="App Store" alt="App Store" /></a> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <ng-content select="p">
+  </ng-content>
+  
+</div>
+
+<app-footer></app-footer>
